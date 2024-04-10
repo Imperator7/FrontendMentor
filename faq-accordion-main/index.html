@@ -3,46 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | FAQ accordion</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: rgb(198, 136, 255);
+    }
+    .header {
+      font-size: 50px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px;
+    }
+    .text-box {
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      border-radius: 20px;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "Work Sans", sans-serif;
+      width: 800px;
+    }
+    .question {
+      color: hsl(292, 42%, 14%);
+      font-weight: 700;
+      font-size: 20px;
+      padding: 25px 0;
+    }
+    
+    .ans {
+      color: hsl(292, 16%, 49%);
+      font-weight: 300;
+    }
+
+    .p-close {
+      display: none;
+    }
+
+    .btn-close {
+      border-radius: 1000px;
+      width: 25px;
+      height: 25px;
+      border: 0;
+      background-color: hsl(292, 42%, 14%);
+      color: white;
+      font-size: 30px;
+      line-height: 0;
+      align-items: center;
+      float: right;
+    }
+
+    .btn-open {
+
+    }
   </style>
 </head>
 <body>
-
-  FAQs
-
-  What is Frontend Mentor, and how will it help me?
-
-  Frontend Mentor offers realistic coding challenges to help developers improve their 
-  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-  all levels and ideal for portfolio building.
-
-  Is Frontend Mentor free?
-
-  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
-  option providing access to a range of projects suitable for all skill levels.
-
-  Can I use Frontend Mentor projects in my portfolio?
-
-  Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
-  way to showcase your skills to potential employers!
-
-  How can I get help if I'm stuck on a Frontend Mentor challenge?
-  
-  The best place to get help is inside Frontend Mentor's Discord community. There's a help 
-  channel where you can ask questions and seek support from other community members.
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="text-box">
+    <p class="header dk-purple"><img src="assets/images/icon-star.svg" alt="star" class="img-star"> FAQs</p>
+    <br>
+    <p class="question">What is Frontend Mentor, and how will it help me? <button class="btn-close"> - </button></p>  
+    <p class="ans p-close">
+      Frontend Mentor offers realistic coding challenges to help developers improve their 
+      frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+      all levels and ideal for portfolio building.
+    </p>
+    <hr>
+    <p class="question">Is Frontend Mentor free? <button class="btn-close"> - </button></p>
+    <p class="ans p-close">
+      Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+      option providing access to a range of projects suitable for all skill levels.
+    </p>
+    <hr>
+    <p class="question">
+      Can I use Frontend Mentor projects in my portfolio?
+    <button class="btn-close"> - </button></p>
+    <p class="ans p-close">
+      Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+    way to showcase your skills to potential employers!
+    </p>
+    <hr>
+    <p class="question">
+      How can I get help if I'm stuck on a Frontend Mentor challenge?
+    <button class="btn-close"> - </button></p>
+    <p class="ans p-close">
+      The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+    channel where you can ask questions and seek support from other community members.
+    </p>
   </div>
+  <script>
+    Array.from(document.getElementsByClassName("btn-close")).map((btn) => btn.addEventListener("click", function(e) {
+      console.log(e)
+    }))
+  </script>
 </body>
 </html>
